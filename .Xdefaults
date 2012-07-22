@@ -1,0 +1,34 @@
+Xft.antialias: true
+Xft.autohint: false
+Xft.rgba: rgb
+
+URxvt*transparent: 0
+URxvt*print-pipe: cat > $(TMPDIR=$HOME mktemp urxvt.XXXXXX)
+URxvt*scrollBar: False
+URxvt*letterSpace: -1
+
+URxvt*font: xft:DejaVu Sans Mono:size=8
+URxvt*boldFont: xft:DejaVu Sans Mono:bold:size=8
+URxvt*italicFont: xft:DejaVu Sans Mono:italic:size=8
+URxvt*boldItalicFont: xft:DejaVu Sans Mono:bold:italic:size=8
+
+URxvt*background: #000000
+URxvt*foreground: #bfbdc0
+
+URxvt*color0: #000000
+URxvt*color1: #8a110e
+URxvt*color2: #669f3d
+URxvt*color3: #b3751e
+URxvt*color4: #493d9f
+URxvt*color5: #9216a3
+URxvt*color6: #198a9c
+URxvt*color7: #bfbdc0
+
+URxvt*color8: #686773
+URxvt*color9: #fc5166
+URxvt*color10: #63ff54
+URxvt*color11: #ffd75c
+URxvt*color12: #766eff
+URxvt*color13: #e151ff
+URxvt*color14: #57ffec
+URxvt*color15: #ffffff
