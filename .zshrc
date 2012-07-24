@@ -16,3 +16,5 @@ alias dhcpcd='sudo dhcpcd'
 activate() {
 	source $HOME/envs/$1/bin/activate
 }
+
+source /usr/bin/virtualenvwrapper.sh
