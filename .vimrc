@@ -20,3 +20,5 @@ colorscheme mustang
 
 autocmd filetype ruby set expandtab
 autocmd filetype bindzone set expandtab sw=2 ts=2 sts=2 autoindent
+
+let g:netrw_list_hide='\.pyc$,^\.git/$'
