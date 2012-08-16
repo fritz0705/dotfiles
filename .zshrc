@@ -18,6 +18,10 @@ activate() {
 	source $HOME/envs/$1/bin/activate
 }
 
+railstest() {
+	ruby -I test/ $1
+}
+
 source /usr/bin/virtualenvwrapper.sh
 
 SAVEHIST=100000
