@@ -21,3 +21,8 @@ activate() {
 source /usr/bin/virtualenvwrapper.sh
 
 SAVEHIST=100000
+
+if [ -d $HOME/.rbenv ]
+then
+	export PATH=$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH
+fi
