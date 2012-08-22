@@ -18,6 +18,10 @@ activate() {
 	source $HOME/envs/$1/bin/activate
 }
 
+railstest() {
+	ruby -I test/ $1
+}
+
 source /usr/bin/virtualenvwrapper.sh
 
 SAVEHIST=100000
@@ -26,4 +30,9 @@ if [ -d ~/.local ]
 then
 	export PATH=$HOME/.local/bin:$HOME/.local/sbin:$PATH
 	export LD_LIBRARY_PATH=$HOME/.local/lib:
+fi
+
+if [ -d $HOME/.rbenv ]
+then
+	export PATH=$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH
 fi
