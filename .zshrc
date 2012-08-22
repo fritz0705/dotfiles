@@ -21,3 +21,9 @@ activate() {
 source /usr/bin/virtualenvwrapper.sh
 
 SAVEHIST=100000
+
+if [ -d ~/.local ]
+then
+	export PATH=$HOME/.local/bin:$HOME/.local/sbin:$PATH
+	export LD_LIBRARY_PATH=$HOME/.local/lib:
+fi
