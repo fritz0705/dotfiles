@@ -1,6 +1,10 @@
 #!/bin/bash
 eval `ssh-agent`
 setxkbmap de neo
+if [ -f ~/.xinitrc.local ]
+then
+	. ~/.xinitrc.local
+fi
 
 if [ -f ~/wallpaper.jpg ]
 then
