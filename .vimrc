@@ -16,7 +16,7 @@ set guifont=DejaVu\ Sans\ Mono\ 8
 set guioptions=
 set hidden
 
-colorscheme mustang
+colorscheme molokai
 
 autocmd filetype ruby set expandtab
 autocmd filetype bindzone set expandtab sw=2 ts=2 sts=2 autoindent
