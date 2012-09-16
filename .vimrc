@@ -22,4 +22,4 @@ autocmd filetype ruby set expandtab
 autocmd filetype bindzone set expandtab sw=2 ts=2 sts=2 autoindent
 autocmd filetype coffee set expandtab
 
-let g:netrw_list_hide='\.pyc$,^\.git/$,\.sw[pno]$'
+let g:netrw_list_hide='\.pyc$,^\.git/$,\.sw[pno]$,\.o$'
