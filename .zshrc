@@ -32,6 +32,11 @@ then
 	export LD_LIBRARY_PATH=$HOME/.local/lib:
 fi
 
+if [ -d ~/.texlive2012 ]
+then
+	export PATH=$HOME/.texlive2012/bin/x86_64-linux:$PATH
+fi
+
 if [ -d $HOME/.rbenv ]
 then
 	export PATH=$HOME/.rbenv/bin:$PATH
