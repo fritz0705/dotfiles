@@ -1,6 +1,7 @@
 #!/bin/bash
 eval `ssh-agent`
 setxkbmap de neo
+urxvtd -q -f -o
 if [ -f ~/.xinitrc.local ]
 then
 	. ~/.xinitrc.local
