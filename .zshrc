@@ -42,3 +42,9 @@ then
 	export PATH=$HOME/.rbenv/bin:$PATH
 	eval "$(rbenv init -)"
 fi
+
+export PERL_LOCAL_LIB_ROOT="/home/fritz/perl5";
+export PERL_MB_OPT="--install_base /home/fritz/perl5";
+export PERL_MM_OPT="INSTALL_BASE=/home/fritz/perl5";
+export PERL5LIB="/home/fritz/perl5/lib/perl5/x86_64-linux-thread-multi:/home/fritz/perl5/lib/perl5";
+export PATH="/home/fritz/perl5/bin:$PATH";
