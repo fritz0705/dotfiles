@@ -1,8 +1,2 @@
-*
-!.zshrc
-!.xinitrc
-!.mpdconf
-!.gitignore
-!.vimrc
-!.Xdefaults
-!.gitconfig
+.*.sw[pno]
+.sw[pno]
