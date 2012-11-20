@@ -69,6 +69,8 @@ zstyle ':completion:*:manuals.(^1*)'           insert-sections true
 zstyle ':completion::complete:*'               use-cache on
 zstyle ':completion::complete:*'               cache-path "${HOME}/.zcompcache"
 
+bindkey -e
+
 bindkey '^r' history-incremental-search-backward
 bindkey "^[[H" beginning-of-line
 bindkey "^[[1~" beginning-of-line
