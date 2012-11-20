@@ -1,0 +1,155 @@
+# My i3 config, designed for usage with Neo2
+# (c) 2012 Fritz Conrad Grimpen
+# Orientation keys: 30 - 44 - 58
+#           QWERTY: h  - n  - m
+#             Neo2: u  - j  - m
+
+# Default font, this is historical
+font -*-fixed-medium-r-normal-*-13-*-*-*-*-70-iso10646-*
+
+# Some floating modifier for mouse actions
+floating_modifier Mod4
+
+# I have a simple concept: Modifiers are on the left side, while the real keys
+# are on the right side, this reduces the confusion for users and allows
+# right-hander, to use their right hand for more complex inputs
+
+# Simple map of keys
+#
+# +----+----+----+----+----+----+----+
+# | 30 | 31 | 32 | 33 | .. | .. | ↵  |
+# +----+----+----+----+----+----+    |
+# | 44 | 45 | 46 | 47 | .. | .. |    |
+# +----+----+----+----+----+----+----+
+# | 58 | 59 | 60 | 61 | ⇬            |
+# +---------+----+----+--------------+
+#  65       | .. | .. |
+# ----------+----+----+
+
+# Layout key bindings
+# Mod1+30
+bindcode Mod1+30 layout tabbed
+# Mod1+31
+bindcode Mod1+31 layout stacking
+# Mod1+32
+bindcode Mod1+32 layout default
+
+# Split type
+# Mod1+44
+bindcode Mod1+44 split horizontal
+# Mod1+45
+bindcode Mod1+45 split vertical
+
+# Mod1+46  Full screen current container
+bindcode Mod1+46 fullscreen
+
+# Mod1+58  Toggle between floating and tiling container
+bindcode Mod1+58 focus mode_toggle
+
+# i3 Control Commands
+# Mod1+Shift+44  Exit i3
+bindcode Mod1+Shift+30 exit
+# Mod1+Shift+45  Reload i3 config
+bindcode Mod1+Shift+31 reload
+# Mod1+Shift+46  Restart i3
+bindcode Mod1+Shift+32 restart
+# Mod1+Shift+47  Lock X server
+bindcode Mod1+Shift+33 exec --no-startup-id $HOME/.i3/lock.sh
+
+# Container control commands
+# Mod1+Shift+44  Kill current container
+bindcode Mod1+Shift+44 kill
+
+# Mod1+Shift+65  Toggle floating for current container
+bindcode Mod1+Shift+65 floating toggle
+
+# Navigation
+# Mod4+44  Left
+bindcode Mod4+44 focus left
+# Mod4+45  Down
+bindcode Mod4+45 focus down
+# Mod4+46  Up
+bindcode Mod4+46 focus up
+# Mod4+47  Right
+bindcode Mod4+47 focus right
+
+# Mod4+30  Parent
+bindcode Mod4+30 focus parent
+# Mod4+58  Child
+bindcode Mod4+58 focus child
+
+# Movements
+# Mod4+Shift+44  Left
+bindcode Mod4+Shift+44 move left
+# Mod4+Shift+45  Down
+bindcode Mod4+Shift+45 move down
+# Mod4+Shift+46  Up
+bindcode Mod4+Shift+46 move up
+# Mod4+Shift+47  Right
+bindcode Mod4+Shift+47 move right
+
+# Workspaces
+bindsym Mod1+1 workspace 1
+bindsym Mod1+2 workspace 2
+bindsym Mod1+3 workspace 3
+bindsym Mod1+4 workspace 4
+bindsym Mod1+5 workspace 5
+bindsym Mod1+6 workspace 6
+bindsym Mod1+7 workspace 7
+bindsym Mod1+8 workspace 8
+bindsym Mod1+9 workspace 9
+bindsym Mod1+0 workspace 10
+
+bindsym Mod4+1 workspace 11
+bindsym Mod4+2 workspace 12
+bindsym Mod4+3 workspace 13
+bindsym Mod4+4 workspace 14
+bindsym Mod4+5 workspace 15
+bindsym Mod4+6 workspace 16
+bindsym Mod4+7 workspace 17
+bindsym Mod4+8 workspace 18
+bindsym Mod4+9 workspace 19
+bindsym Mod4+0 workspace 20
+
+bindsym Mod1+Shift+1 move workspace 1
+bindsym Mod1+Shift+2 move workspace 2
+bindsym Mod1+Shift+3 move workspace 3
+bindsym Mod1+Shift+4 move workspace 4
+bindsym Mod1+Shift+5 move workspace 5
+bindsym Mod1+Shift+6 move workspace 6
+bindsym Mod1+Shift+7 move workspace 7
+bindsym Mod1+Shift+8 move workspace 8
+bindsym Mod1+Shift+9 move workspace 9
+bindsym Mod1+Shift+0 move workspace 10
+
+bindsym Mod4+Shift+1 move workspace 11
+bindsym Mod4+Shift+2 move workspace 12
+bindsym Mod4+Shift+3 move workspace 13
+bindsym Mod4+Shift+4 move workspace 14
+bindsym Mod4+Shift+5 move workspace 15
+bindsym Mod4+Shift+6 move workspace 16
+bindsym Mod4+Shift+7 move workspace 17
+bindsym Mod4+Shift+8 move workspace 18
+bindsym Mod4+Shift+9 move workspace 19
+bindsym Mod4+Shift+0 move workspace 20
+
+# Start terminal
+bindsym Mod1+Return exec --no-startup-id urxvtc
+
+# MPD Control
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioPrev exec mpc prev
+bindsym XF86AudioRaiseVolume exec mpc volume +5
+bindsym XF86AudioLowerVolume exec mpc volume -5
+
+bindsym XF86ScreenSaver exec $HOME/.i3/lock.sh
+bindsym XF86Sleep exec $HOME/.i3/sleep.sh
+bindsym XF86Suspend exec $HOME/.i3/suspend.sh
+bindsym XF86Battery exec $HOME/.i3/hybrid-suspend.sh
+
+bindsym XF86TouchpadToggle exec $HOME/.i3/input-toggle.sh
+
+bar {
+}
+

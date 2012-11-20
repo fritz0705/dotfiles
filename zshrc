@@ -1,5 +1,7 @@
 # ZSH configuration
 
+autoload -Uz colors && colors
+
 setopt auto_resume
 setopt notify
 
@@ -22,6 +24,8 @@ setopt always_to_end
 setopt auto_menu
 setopt auto_list
 setopt auto_param_slash
+
+setopt prompt_subst
 
 unsetopt case_glob
 unsetopt correct_all
