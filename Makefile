@@ -7,7 +7,7 @@ install:
 	ln -frs vimrc $(HOME)/.vimrc
 	ln -frs Xdefaults $(HOME)/.Xdefaults
 	ln -frs xinitrc $(HOME)/.xinitrc
-	ln -frs i3 $(HOME)/.i3
+	ln -nfrs i3 $(HOME)/.i3
 	ln -frs gitconfig $(HOME)/.gitconfig
 
 uninstall:
