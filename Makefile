@@ -1,14 +1,14 @@
-.PHONY: install
+.PHONY: install uninstall
 
-install:
-	ln -frs zshenv $(HOME)/.zshenv
-	ln -frs zshrc $(HOME)/.zshrc
-	ln -frs mpdconf $(HOME)/.mpdconf
-	ln -frs vimrc $(HOME)/.vimrc
-	ln -frs Xdefaults $(HOME)/.Xdefaults
-	ln -frs xinitrc $(HOME)/.xinitrc
+install: uninstall
+	ln -nfrs zshenv $(HOME)/.zshenv
+	ln -nfrs zshrc $(HOME)/.zshrc
+	ln -nfrs mpdconf $(HOME)/.mpdconf
+	ln -nfrs vimrc $(HOME)/.vimrc
+	ln -nfrs Xdefaults $(HOME)/.Xdefaults
+	ln -nfrs xinitrc $(HOME)/.xinitrc
 	ln -nfrs i3 $(HOME)/.i3
-	ln -frs gitconfig $(HOME)/.gitconfig
+	ln -nfrs gitconfig $(HOME)/.gitconfig
 
 uninstall:
 	rm -f $(HOME)/.zshenv
