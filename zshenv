@@ -37,6 +37,7 @@ then
 		ssh-agent -k
 	}
 
+	autoload -Uz add-zsh-hook
 	add-zsh-hook zshexit exit_ssh_agent
 fi
 

@@ -114,7 +114,10 @@ function current_branch() {
 PROMPT='%{$fg[green]%}%n@%m %{$fg_bold[yellow]%}%~ %{$reset_color%}%(!.#.$) '
 
 function title {
-	print -Pn "\e]2;$1:q\a"
+	if [[ $TERM == rxvt* ]]
+	then
+		print -Pn "\e]2;$1:q\a"
+	fi
 }
 
 function set_window_title_precmd {
