@@ -96,6 +96,8 @@ alias rfkill='sudo rfkill'
 alias tcpdump='sudo tcpdump'
 alias umount='sudo umount'
 
+alias ls='ls --color=auto'
+
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=100000
 SAVEHIST=100000
