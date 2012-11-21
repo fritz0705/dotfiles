@@ -1,6 +1,7 @@
 # ZSH configuration
 
 autoload -Uz colors && colors
+autoload -Uz add-zsh-hook
 
 zmodload zsh/attr
 zmodload zsh/stat
@@ -111,4 +112,19 @@ function current_branch() {
 }
 
 PROMPT='%{$fg[green]%}%n@%m %{$fg_bold[yellow]%}%~ %{$reset_color%}%(!.#.$) '
+
+function title {
+	print -Pn "\e]2;$1:q\a"
+}
+
+function set_window_title_precmd {
+	title $PWD
+}
+
+function set_window_title_preexec {
+	title $*
+}
+
+add-zsh-hook precmd set_window_title_precmd
+add-zsh-hook preexec set_window_title_preexec
 

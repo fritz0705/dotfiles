@@ -33,8 +33,10 @@ if [ -z "$SSH_AGENT_PID" ]
 then
 	eval `ssh-agent`
 
-	zshexit() {
+	function exit_ssh_agent {
 		ssh-agent -k
 	}
+
+	add-zsh-hook zshexit exit_ssh_agent
 fi
 
