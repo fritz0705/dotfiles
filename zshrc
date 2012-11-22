@@ -118,7 +118,8 @@ PROMPT='%{$fg[green]%}%n@%m %{$fg_bold[yellow]%}%~ %{$reset_color%}%(!.#.$) '
 function title {
 	if [[ $TERM == rxvt* ]]
 	then
-		print -Pn "\e]2;$1:q\a"
+		local TITLE="${1/\%/}"
+		print -Pn "\e]2;$TITLE:q\a"
 	fi
 }
 
