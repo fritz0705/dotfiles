@@ -3,8 +3,8 @@
 autoload -Uz colors && colors
 autoload -Uz add-zsh-hook
 
-zmodload zsh/attr
-zmodload zsh/stat
+zmodload zsh/attr 2>/dev/null
+zmodload zsh/stat 2>/dev/null
 
 autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
@@ -80,23 +80,26 @@ bindkey "^[[F"  end-of-line
 bindkey "^[[4~" end-of-line
 bindkey "^[OF" end-of-line
 
-alias dhcpcd='sudo dhcpcd'
-alias halt='sudo halt'
-alias ip='sudo ip'
-alias iptables='sudo iptables'
-alias modprobe='sudo modprobe'
-alias mount='sudo mount'
-alias nmap='sudo nmap'
-alias openvpn='sudo openvpn'
-alias packer='sudo packer'
-alias pacman='sudo pacman'
-alias rc.d='sudo rc.d'
-alias reboot='sudo reboot'
-alias rfkill='sudo rfkill'
-alias tcpdump='sudo tcpdump'
-alias umount='sudo umount'
+if [ "$(uname)" = "Linux" ]
+then
+	alias dhcpcd='sudo dhcpcd'
+	alias halt='sudo halt'
+	alias ip='sudo ip'
+	alias iptables='sudo iptables'
+	alias modprobe='sudo modprobe'
+	alias mount='sudo mount'
+	alias nmap='sudo nmap'
+	alias openvpn='sudo openvpn'
+	alias packer='sudo packer'
+	alias pacman='sudo pacman'
+	alias rc.d='sudo rc.d'
+	alias reboot='sudo reboot'
+	alias rfkill='sudo rfkill'
+	alias tcpdump='sudo tcpdump'
+	alias umount='sudo umount'
 
-alias ls='ls --color=auto'
+	alias ls='ls --color=auto'
+fi
 
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=100000

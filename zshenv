@@ -15,7 +15,7 @@ fi
 if [ -d ~/.local ]
 then
 	export PATH=$HOME/.local/bin:$HOME/.local/sbin:$PATH
-	export LD_LIBRARY_PATH=$HOME/.local/lib:$LD_LIBRARY_PATH
+	export LD_LIBRARY_PATH=$HOME/.local/lib
 fi
 
 if [ -d ~/.texlive2012 ]
@@ -29,12 +29,12 @@ then
 	eval "$(rbenv init -)"
 fi
 
-if [ -z "$SSH_AGENT_PID" ]
+if [ -z "$SSH_AGENT_PID" -a -z "$SSH_CONNECTION"  ]
 then
 	eval `ssh-agent`
 
 	function exit_ssh_agent {
-		ssh-agent -k
+		eval `ssh-agent -k`
 	}
 
 	autoload -Uz add-zsh-hook
