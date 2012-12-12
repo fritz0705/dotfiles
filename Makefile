@@ -1,14 +1,16 @@
+LINK := ln -fs
+
 .PHONY: install uninstall
 
 install: uninstall
-	ln -nfrs zshenv $(HOME)/.zshenv
-	ln -nfrs zshrc $(HOME)/.zshrc
-	ln -nfrs mpdconf $(HOME)/.mpdconf
-	ln -nfrs vimrc $(HOME)/.vimrc
-	ln -nfrs Xdefaults $(HOME)/.Xdefaults
-	ln -nfrs xinitrc $(HOME)/.xinitrc
-	ln -nfrs i3 $(HOME)/.i3
-	ln -nfrs gitconfig $(HOME)/.gitconfig
+	$(LINK) $(PWD)/zshenv $(HOME)/.zshenv
+	$(LINK) $(PWD)/zshrc $(HOME)/.zshrc
+	$(LINK) $(PWD)/mpdconf $(HOME)/.mpdconf
+	$(LINK) $(PWD)/vimrc $(HOME)/.vimrc
+	$(LINK) $(PWD)/Xdefaults $(HOME)/.Xdefaults
+	$(LINK) $(PWD)/xinitrc $(HOME)/.xinitrc
+	$(LINK) $(PWD)/i3 $(HOME)/.i3
+	$(LINK) $(PWD)/gitconfig $(HOME)/.gitconfig
 
 uninstall:
 	rm -f $(HOME)/.zshenv
