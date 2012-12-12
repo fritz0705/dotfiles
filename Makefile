@@ -6,7 +6,7 @@ WITH_VIM     = yes
 WITH_X11     = yes
 WITH_GIT     = yes
 
--include 'Make.local'
+-include Make.local
 
 .PHONY: install uninstall
 
