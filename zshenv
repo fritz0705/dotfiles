@@ -29,7 +29,7 @@ then
 	eval "$(rbenv init -)"
 fi
 
-if [ -z "$SSH_AGENT_PID" -a -z "$SSH_CONNECTION"  ]
+if [ -z "$SSH_AGENT_PID" -a -z "$SSH_CONNECTION" -a $(id -u) = $(command stat $HOME -c '%u') ]
 then
 	eval `ssh-agent`
 
@@ -37,7 +37,12 @@ then
 		eval `ssh-agent -k`
 	}
 
+	function ssh_agent_kill_hint {
+		[ $(echo $3 | cut -d' ' -f1) == "exec" ] && export SSH_AGENT_KILL=$(SSH_AGENT_PID)
+	}
+
 	autoload -Uz add-zsh-hook
+	add-zsh-hook preexec ssh_agent_kill_hint
 	add-zsh-hook zshexit exit_ssh_agent
 fi
 
