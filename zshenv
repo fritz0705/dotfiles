@@ -38,7 +38,7 @@ then
 	}
 
 	function ssh_agent_kill_hint {
-		[ $(echo $3 | cut -d' ' -f1) == "exec" ] && export SSH_AGENT_KILL=$(SSH_AGENT_PID)
+		[ -n "$SSH_AGENT_PID" -a $(echo $3 | cut-d' ' -f1) = "exec" ] && export SSH_AGENT_KILL=${SSH_AGENT_PID}
 	}
 
 	autoload -Uz add-zsh-hook
