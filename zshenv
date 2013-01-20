@@ -23,7 +23,16 @@ then
 	export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
 fi
 
-if [ -z "$SSH_AGENT_PID" -a -z "$SSH_CONNECTION" -a $(id -u) = $(command stat $HOME -c '%u') ]
+function _stat_file_uid {
+	if [ $(uname) = "FreeBSD" ]
+	then
+		command stat -f "%u" $1
+	else
+		command stat $1 -c "%u"
+	fi
+}
+
+if [ -z "$SSH_AGENT_PID" -a -z "$SSH_CONNECTION" -a $(id -u) = $(_stat_file_uid $HOME) ]
 then
 	eval `ssh-agent`
 
