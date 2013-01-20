@@ -137,3 +137,8 @@ function set_window_title_preexec {
 add-zsh-hook precmd set_window_title_precmd
 add-zsh-hook preexec set_window_title_preexec
 
+if [ -f /usr/bin/virtualenvwrapper.sh ]
+then
+	source /usr/bin/virtualenvwrapper.sh
+fi
+

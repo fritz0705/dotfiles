@@ -1,14 +1,11 @@
 #!/bin/bash
 setxkbmap de neo
 urxvtd -q -f -o
-if [ -f ~/.xinitrc.local ]
-then
-	. ~/.xinitrc.local
-fi
 
-if [ -f ~/wallpaper.jpg ]
-then
-	feh --bg-center ~/wallpaper.jpg
-fi
+[ -f ~/.xinitrc.local ] && source ~/.xinitrc.local
+[ -f ~/wallpaper.jpg ] && feh --bg-center ~/wallpaper.jpg
 
 i3
+
+[ "${SSH_KILL_AGENT}" = "${SSH_AGENT_PID}" ] && ssh-agent -k
+

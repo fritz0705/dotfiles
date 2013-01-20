@@ -2,11 +2,6 @@ export EDITOR="vim"
 export VISUAL="vim"
 export PAGER="less"
 
-if [ -f /usr/bin/virtualenvwrapper.sh ]
-then
-	source /usr/bin/virtualenvwrapper.sh
-fi
-
 if [ -d ~/.mpd ]
 then
 	export MPD_HOST=$HOME/.mpd/socket
@@ -25,8 +20,7 @@ fi
 
 if [ -d ~/.rbenv ]
 then
-	export PATH=$HOME/.rbenv/bin:$PATH
-	eval "$(rbenv init -)"
+	export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
 fi
 
 if [ -z "$SSH_AGENT_PID" -a -z "$SSH_CONNECTION" -a $(id -u) = $(command stat $HOME -c '%u') ]
