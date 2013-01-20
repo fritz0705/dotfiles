@@ -36,5 +36,9 @@ colorscheme molokai
 " NetRW
 let g:netrw_list_hide='\.pyc$,^\.git/$,\.sw[pno]$,\.o$,^\.sass-cache/$,^__pycache__/$'
 
+" NERDTree
+let NERDTreeIgnore=['\.pyc$', '^\.git/$', '\.sw?$', '\.o$', '^\.sass-cache/$', '^__pycache__/$', '^celerybeat-schedule$']
+
 " Command mappings
 cnoremap w!! w !sudo tee % >/dev/null
+
