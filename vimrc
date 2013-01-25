@@ -19,6 +19,11 @@ set number
 set numberwidth=2
 set title
 set incsearch
+set nowrap
+
+" Spaces etc.
+set textwidth=80
+set colorcolumn=+1
 
 " Indention
 set tabstop=2
@@ -39,6 +44,7 @@ let g:netrw_list_hide='\.pyc$,^\.git/$,\.sw[pno]$,\.o$,^\.sass-cache/$,^__pycach
 
 " NERDTree
 let NERDTreeIgnore=['\.pyc$', '^\.git/$', '\.sw?$', '\.o$', '^\.sass-cache/$', '^__pycache__$', '^celerybeat-schedule$']
+let NERDTreeMinimalUI=1
 
 " Command mappings
 cnoremap w!! w !sudo tee % >/dev/null
