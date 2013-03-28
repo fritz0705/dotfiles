@@ -82,23 +82,19 @@ bindkey "^[OF" end-of-line
 
 if [ "$(uname)" = "Linux" ]
 then
+	alias halt='systemctl poweroff'
+	alias poweroff='systemctl poweroff'
+	alias reboot='systemctl reboot'
+
 	alias dhcpcd='sudo dhcpcd'
-	alias halt='sudo halt'
 	alias ip='sudo ip'
-	alias iptables='sudo iptables'
-	alias modprobe='sudo modprobe'
-	alias mount='sudo mount'
 	alias nmap='sudo nmap'
-	alias openvpn='sudo openvpn'
-	alias packer='sudo packer'
-	alias pacman='sudo pacman'
-	alias rc.d='sudo rc.d'
-	alias reboot='sudo reboot'
-	alias rfkill='sudo rfkill'
-	alias tcpdump='sudo tcpdump'
+
+	alias mount='sudo mount'
 	alias umount='sudo umount'
 
 	alias ls='ls --color=auto'
+	alias grep='grep --color=auto'
 fi
 
 HISTFILE="$HOME/.zsh_history"
@@ -131,7 +127,7 @@ function set_window_title_precmd {
 }
 
 function set_window_title_preexec {
-	title $*
+	title $2
 }
 
 add-zsh-hook precmd set_window_title_precmd
