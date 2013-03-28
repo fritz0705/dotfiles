@@ -31,10 +31,10 @@ set softtabstop=2
 set copyindent
 set autoindent
 
-autocmd filetype ruby     set expandtab
-autocmd filetype bindzone set expandtab sw=2 ts=2 sts=2 autoindent
-autocmd filetype coffee   set expandtab
-autocmd filetype java     set expandtab sw=4 ts=4 sts=4
+autocmd filetype ruby     setlocal expandtab
+autocmd filetype bindzone setlocal expandtab sw=2 ts=2 sts=2 autoindent
+autocmd filetype coffee   setlocal expandtab
+autocmd filetype java     setlocal expandtab sw=4 ts=4 sts=4
 
 " Colorscheme
 colorscheme molokai
