@@ -6,6 +6,7 @@
 
 # Default font, this is historical
 font -*-fixed-medium-r-normal-*-13-*-*-*-*-70-iso10646-*
+font pango:DejaVu Sans Mono Bold 8
 
 # Some floating modifier for mouse actions
 floating_modifier Mod4
