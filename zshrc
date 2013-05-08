@@ -1,5 +1,10 @@
 # ZSH configuration
 
+if [ -f ~/.zshrc.local ]
+then
+	. ~/.zshrc.local
+fi
+
 autoload -Uz colors && colors
 autoload -Uz add-zsh-hook
 
@@ -82,16 +87,25 @@ bindkey "^[OF" end-of-line
 
 if [ "$(uname)" = "Linux" ]
 then
-	alias halt='systemctl poweroff'
-	alias poweroff='systemctl poweroff'
-	alias reboot='systemctl reboot'
+	if [ "$system_alias" != "off" ]
+	then
+		alias halt='systemctl poweroff'
+		alias poweroff='systemctl poweroff'
+		alias reboot='systemctl reboot'
+	fi
 
-	alias dhcpcd='sudo dhcpcd'
-	alias ip='sudo ip'
-	alias nmap='sudo nmap'
+	if [ "$network_alias" != "off" ]
+	then
+		alias dhcpcd='sudo dhcpcd'
+		alias ip='sudo ip'
+		alias nmap='sudo nmap'
+	fi
 
-	alias mount='sudo mount'
-	alias umount='sudo umount'
+	if [ "$mount_alias" != "off" ]
+	then
+		alias mount='sudo mount'
+		alias umount='sudo umount'
+	fi
 
 	alias ls='ls --color=auto'
 	alias grep='grep --color=auto'
