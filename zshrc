@@ -8,8 +8,8 @@ fi
 autoload -Uz colors && colors
 autoload -Uz add-zsh-hook
 
-zmodload zsh/attr 2>/dev/null
-zmodload zsh/stat 2>/dev/null
+zmodload zsh/cap 2>/dev/null
+zmodload zsh/pcre 2>/dev/null
 
 autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
