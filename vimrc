@@ -46,6 +46,3 @@ let g:netrw_list_hide='\.pyc$,^\.git/$,\.sw[pno]$,\.o$,^\.sass-cache/$,^__pycach
 let NERDTreeIgnore=['\.pyc$', '^\.git/$', '\.sw?$', '\.o$', '^\.sass-cache/$', '^__pycache__$', '^celerybeat-schedule$']
 let NERDTreeMinimalUI=1
 
-" Command mappings
-cnoremap w!! w !sudo tee % >/dev/null
-
