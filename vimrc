@@ -37,7 +37,8 @@ autocmd filetype coffee   setlocal expandtab
 autocmd filetype java     setlocal expandtab sw=4 ts=4 sts=4
 
 " Colorscheme
-colorscheme molokai
+set background=dark
+colorscheme solarized
 
 " NetRW
 let g:netrw_list_hide='\.pyc$,^\.git/$,\.sw[pno]$,\.o$,^\.sass-cache/$,^__pycache__/$'

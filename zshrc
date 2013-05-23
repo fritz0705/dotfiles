@@ -1,5 +1,13 @@
 # ZSH configuration
 
+host_color=green
+username_color=green
+
+if [ $UID = 0 ]
+then
+	username_color=red
+fi
+
 if [ -f ~/.zshrc.local ]
 then
 	. ~/.zshrc.local
@@ -126,7 +134,7 @@ function current_branch() {
 	fi
 }
 
-PROMPT='%{$fg[green]%}%n@%m %{$fg_bold[yellow]%}%~ %{$reset_color%}%(!.#.$) '
+PROMPT='%{$fg['$username_color']%}%n%{$fg['$host_color']%}@%m %{$fg_bold[yellow]%}%~ %{$reset_color%}%(!.#.$) '
 
 function title {
 	if [[ $TERM == rxvt* ]]

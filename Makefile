@@ -31,12 +31,12 @@ ifeq ($(WITH_GIT),yes)
 endif
 
 uninstall:
-	rm -f $(HOME)/.zshenv
-	rm -f $(HOME)/.zshrc
-	rm -f $(HOME)/.mpdconf
-	rm -f $(HOME)/.vimrc
-	rm -f $(HOME)/.Xdefaults
-	rm -f $(HOME)/.xinitrc
-	rm -f $(HOME)/.i3
-	rm -f $(HOME)/.gitconfig
+	$(RM) $(HOME)/.zshenv
+	$(RM) $(HOME)/.zshrc
+	$(RM) $(HOME)/.mpdconf
+	$(RM) $(HOME)/.vimrc
+	$(RM) $(HOME)/.Xdefaults
+	$(RM) $(HOME)/.xinitrc
+	$(RM) $(HOME)/.i3
+	$(RM) $(HOME)/.gitconfig
 
