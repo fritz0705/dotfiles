@@ -152,5 +152,6 @@ bindsym XF86Battery exec $HOME/.i3/hybrid-suspend.sh
 bindsym XF86TouchpadToggle exec $HOME/.i3/input-toggle.sh
 
 bar {
+	status_command while head -n1 $HOME/.i3/bar; do sleep 1; done
 }
 
