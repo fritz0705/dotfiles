@@ -25,6 +25,7 @@ ifeq ($(WITH_X11),yes)
 	$(LINK) $(PWD)/Xdefaults $(HOME)/.Xdefaults
 	$(LINK) $(PWD)/xinitrc $(HOME)/.xinitrc
 	$(LINK) $(PWD)/i3 $(HOME)/.i3
+	mkfifo $(HOME)/.i3/bar
 endif
 ifeq ($(WITH_GIT),yes)
 	$(LINK) $(PWD)/gitconfig $(HOME)/.gitconfig
@@ -37,6 +38,7 @@ uninstall:
 	$(RM) $(HOME)/.vimrc
 	$(RM) $(HOME)/.Xdefaults
 	$(RM) $(HOME)/.xinitrc
+	$(RM) $(HOME)/.i3/bar
 	$(RM) $(HOME)/.i3
 	$(RM) $(HOME)/.gitconfig
 
