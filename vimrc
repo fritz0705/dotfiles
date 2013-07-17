@@ -38,7 +38,7 @@ autocmd filetype java     setlocal expandtab sw=4 ts=4 sts=4
 
 " Colorscheme
 set background=dark
-colorscheme solarized
+colorscheme molokai
 
 " NetRW
 let g:netrw_list_hide='\.pyc$,^\.git/$,\.sw[pno]$,\.o$,^\.sass-cache/$,^__pycache__/$'
