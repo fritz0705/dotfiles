@@ -54,3 +54,8 @@ then
 	export PATH=$HOME/android/sdk/tools:$HOME/android/sdk/platform-tools:$PATH
 fi
 
+if [ -d ~/godev -a -z "$GOPATH" ]
+then
+	export GOPATH=$HOME/godev
+fi
+

@@ -160,3 +160,4 @@ then
 	source /usr/bin/virtualenvwrapper.sh
 fi
 
+source /usr/share/go/misc/zsh/go
