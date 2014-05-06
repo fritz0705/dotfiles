@@ -13,10 +13,10 @@ URxvt*boldFont: xft:DejaVu Sans Mono:bold:size=8
 URxvt*italicFont: xft:DejaVu Sans Mono:italic:size=8
 URxvt*boldItalicFont: xft:DejaVu Sans Mono:bold:italic:size=8
  
-URxvtL*font: xft:DejaVu Sans Mono:size=24
-URxvtL*boldFont: xft:DejaVu Sans Mono:bold:size=24
-URxvtL*italicFont: xft:DejaVu Sans Mono:italic:size=24
-URxvtL*boldItalicFont: xft:DejaVu Sans Mono:bold:italic:size=24
+URxvtL*font: xft:DejaVu Sans Mono:size=18
+URxvtL*boldFont: xft:DejaVu Sans Mono:bold:size=18
+URxvtL*italicFont: xft:DejaVu Sans Mono:italic:size=18
+URxvtL*boldItalicFont: xft:DejaVu Sans Mono:bold:italic:size=18
 
 ! Old theme
 URxvt*background: #000000
