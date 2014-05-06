@@ -10,7 +10,7 @@ set nocompatible
 set ttyfast
 set backspace=indent,eol,start
 set modeline
-set modelines=1
+set modelines=10
 set hidden
 
 " Fancy options
@@ -38,7 +38,7 @@ autocmd filetype java     setlocal expandtab sw=4 ts=4 sts=4
 
 " Colorscheme
 set background=dark
-colorscheme molokai
+colorscheme default
 
 " NetRW
 let g:netrw_list_hide='\.pyc$,^\.git/$,\.sw[pno]$,\.o$,^\.sass-cache/$,^__pycache__/$'
@@ -47,3 +47,7 @@ let g:netrw_list_hide='\.pyc$,^\.git/$,\.sw[pno]$,\.o$,^\.sass-cache/$,^__pycach
 let NERDTreeIgnore=['\.pyc$', '^\.git/$', '\.sw?$', '\.o$', '^\.sass-cache/$', '^__pycache__$', '^celerybeat-schedule$']
 let NERDTreeMinimalUI=1
 
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
