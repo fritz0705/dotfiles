@@ -40,6 +40,9 @@ URxvt*color13: #e151ff
 URxvt*color14: #57ffec
 URxvt*color15: #ffffff
 
+URxvt.keysym.M-C-d: command:\033[?5h
+URxvt.keysym.M-C-t: command:\033[?5l
+
 ! URxvt*background: #002b36
 ! URxvt*foreground: #839496
 ! URxvt*fading: 40
