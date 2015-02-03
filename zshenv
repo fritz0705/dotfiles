@@ -54,8 +54,12 @@ then
 	export PATH=$HOME/android/sdk/tools:$HOME/android/sdk/platform-tools:$PATH
 fi
 
-if [ -d ~/godev -a -z "$GOPATH" ]
+if [ -d ~/go -a -z "$GOPATH" ]
 then
-	export GOPATH=$HOME/godev
+	export GOPATH=$HOME/go
 fi
 
+if [ -d ~/.cabal ]
+then
+	export PATH=$HOME/.cabal/bin:$PATH
+fi
