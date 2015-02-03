@@ -95,26 +95,6 @@ bindkey "^[OF" end-of-line
 
 if [ "$(uname)" = "Linux" ]
 then
-	if [ "$system_alias" != "off" ]
-	then
-		alias halt='systemctl poweroff'
-		alias poweroff='systemctl poweroff'
-		alias reboot='systemctl reboot'
-	fi
-
-	if [ "$network_alias" != "off" ]
-	then
-		alias dhcpcd='sudo dhcpcd'
-		alias ip='sudo ip'
-		alias nmap='sudo nmap'
-	fi
-
-	if [ "$mount_alias" != "off" ]
-	then
-		alias mount='sudo mount'
-		alias umount='sudo umount'
-	fi
-
 	alias ls='ls --color=auto'
 	alias grep='grep --color=auto'
 fi
