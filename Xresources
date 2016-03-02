@@ -1,6 +1,9 @@
 Xft.antialias: true
 Xft.autohint: false
 Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: true
 
 URxvt*transparent: 0
 URxvt*print-pipe: cat > $(TMPDIR=$HOME mktemp urxvt.XXXXXX)
@@ -8,10 +11,15 @@ URxvt*scrollBar: False
 URxvt*letterSpace: -1
 URxvt*urgentOnBell: true
 
-URxvt*font: xft:DejaVu Sans Mono:size=8
-URxvt*boldFont: xft:DejaVu Sans Mono:bold:size=8
-URxvt*italicFont: xft:DejaVu Sans Mono:italic:size=8
-URxvt*boldItalicFont: xft:DejaVu Sans Mono:bold:italic:size=8
+URxvtS*font: xft:DejaVu Sans Mono:size=6
+URxvtS*boldFont: xft:DejaVu Sans Mono:bold:size=6
+URxvtS*italicFont: xft:DejaVu Sans Mono:italic:size=6
+URxvtS*boldItalicFont: xft:DejaVu Sans Mono:bold:italic:size=6
+
+URxvt*font: xft:DejaVu Sans Mono:size=9
+URxvt*boldFont: xft:DejaVu Sans Mono:bold:size=9
+URxvt*italicFont: xft:DejaVu Sans Mono:italic:size=9
+URxvt*boldItalicFont: xft:DejaVu Sans Mono:bold:italic:size=9
  
 URxvtL*font: xft:DejaVu Sans Mono:size=18
 URxvtL*boldFont: xft:DejaVu Sans Mono:bold:size=18
@@ -42,28 +50,3 @@ URxvt*color15: #ffffff
 
 URxvt.keysym.M-C-d: command:\033[?5h
 URxvt.keysym.M-C-t: command:\033[?5l
-
-! URxvt*background: #002b36
-! URxvt*foreground: #839496
-! URxvt*fading: 40
-! URxvt*fadeColor: #002b36
-! URxvt*cursorColor: #93a1a1
-! URxvt*pointerColorBackground: #586e75
-! URxvt*pointerColorForeground: #93a1a1
-! 
-! URxvt*color0: #073642
-! URxvt*color1: #dc322f
-! URxvt*color2: #859900
-! URxvt*color3: #b58900
-! URxvt*color4: #268bd2
-! URxvt*color5: #d33682
-! URxvt*color6: #2aa198
-! URxvt*color7: #eee8d5
-! URxvt*color9: #cb4b16
-! URxvt*color8: #002b36
-! URxvt*color10: #586e75
-! URxvt*color11: #657b83
-! URxvt*color12: #839496
-! URxvt*color13: #6c71c4
-! URxvt*color14: #93a1a1
-! URxvt*color15: #fdf6e3

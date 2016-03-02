@@ -1,0 +1,10 @@
+[Unit]
+Description=rxvt-unicode terminal daemon
+
+[Service]
+Environment=RXVT_SOCKET=%t/urxvtd.sock
+ExecStart=/bin/urxvtd
+Restart=always
+
+[Install]
+WantedBy=default.target

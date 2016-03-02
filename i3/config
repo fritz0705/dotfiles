@@ -5,8 +5,7 @@
 #             Neo2: u  - j  - m
 
 # Default font, this is historical
-font -*-fixed-medium-r-normal-*-13-*-*-*-*-70-iso10646-*
-font pango:DejaVu Sans Mono Bold 8
+font pango:DejaVu Sans Mono 9
 
 # Some floating modifier for mouse actions
 floating_modifier Mod4
@@ -136,13 +135,7 @@ bindsym Mod4+Shift+0 move workspace 20
 
 # Start terminal
 bindsym Mod1+Return exec --no-startup-id urxvtc
-
-# MPD Control
-bindsym XF86AudioPlay exec mpc toggle
-bindsym XF86AudioNext exec mpc next
-bindsym XF86AudioPrev exec mpc prev
-bindsym XF86AudioRaiseVolume exec mpc volume +5
-bindsym XF86AudioLowerVolume exec mpc volume -5
+bindsym Mod1+Shift+Return exec --no-startup-id urxvt
 
 bindsym XF86ScreenSaver exec $HOME/.i3/lock.sh
 bindsym XF86Sleep exec $HOME/.i3/sleep.sh
@@ -152,6 +145,5 @@ bindsym XF86Battery exec $HOME/.i3/hybrid-suspend.sh
 bindsym XF86TouchpadToggle exec $HOME/.i3/input-toggle.sh
 
 bar {
-	status_command while head -n1 $HOME/.i3/bar; do sleep 1; done
 }
 

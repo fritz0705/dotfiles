@@ -1,0 +1,115 @@
+UID=$(id -u)
+
+PS1="fluorine $(tput setf 12)\${PWD/#\$HOME/\~}$(tput op) $ "
+
+export SSH_AUTH_SOCK=/run/user/$UID/ssh-agent.sock
+export RXVT_SOCKET=/run/user/$UID/urxvtd.sock
+
+alias ls="ls --color=auto"
+alias S="sudo"
+alias chromium="chromium --force-device-scale-factor=1.3"
+alias weather="curl http://wttr.in/Bremen"
+
+ssh-add-keys() {
+	ssh-add ~/.ssh/id_*
+}
+
+sesam() {
+	curl -X POST -u nerd:test1234 http://rpi.embassy.ccchb.de/open
+}
+
+# Sane value for ^L
+bind "^L=clear-screen"
+
+[[ -d ~/.local/bin  ]] && PATH=$HOME/.local/bin:$PATH
+[[ -d ~/.local/sbin ]] && PATH=$HOME/.local/sbin:$PATH
+[[ -d ~/.cabal/bin  ]] && PATH=$HOME/.cabal/bin:$PATH
+[[ -d ~/go ]] && export GOPATH=~/go
+
+eduroamfix() {
+	sudo ip link set wlp3s0 down
+	sudo ip link set wlp3s0 up
+}
+
+punktinfo() {
+	file="$1"
+	if [ ! -f "$file" ]
+	then
+		echo "Not found: $file"
+		return 1
+	fi
+	eintraege=$(wc -l < "$file")
+	eintraege=$(($eintraege - 1))
+	punktbasis=$(head -1 "$file")
+	durch=$(tail -n +2 "$file" | durchschnitt $((eintraege * $punktbasis)))
+	echo "Einträge:      $eintraege"
+	echo "Punkte"
+	echo "  pro Eintrag: $punktbasis"
+	echo "  gesamt:      "$(($punktbasis * $eintraege))
+	echo "  erreicht:    "$durch
+}
+
+durchschnitt() {
+	(
+		echo -n "(";
+		cut -d$'\t' -f 2 \
+			| tr '[:space:]' '+' \
+			| tr -s '+' \
+			| head -c -1;
+		echo ")*100/$1"
+	) | tee /dev/stderr | bc | tr -d '[:space:]'
+	echo "%"
+}
+
+pingn() {
+	echo "PING $1 ($1) 56(84) bytes of data."
+	n=1
+	while sleep 1
+	do
+		echo "64 bytes from $1: icmp_seq=$n ttl=58 time=$(($RANDOM % 7 + 13)).$(($RANDOM % 10))ms"
+		n=$(($n + 1))
+	done
+}
+
+colors() {
+	echo "Basic colors"
+	echo '\t01234567'
+	for i in $(seq 0 1)
+	do
+		echo -n $(($i * 8))'\t'
+		for j in $(seq 0 7)
+		do
+			tput setb $(($i * 8 + $j))
+			echo -n ' '
+			tput op
+		done
+		echo
+	done
+	echo "Extended colors"
+	echo '\t012345'
+	for i in $(seq 0 39)
+	do
+		echo -n $((16 + $i * 6))'\t' 
+		for j in $(seq 0 5)
+		do
+			tput setb $((16 + $i * 6 + $j))
+			echo -n ' '
+			tput op
+		done
+		echo
+	done
+}
+
+stugaprint() {
+	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH \
+		-sOutputFile=- "$1" | ssh stuga0.informatik.uni-bremen.de -- lp
+}
+
+venv() {
+	if [ ! -f .venv/bin/activate ]
+	then
+		return 1
+	fi
+	deactivate && true
+	. .venv/bin/activate
+}
