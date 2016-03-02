@@ -14,10 +14,6 @@ ssh-add-keys() {
 	ssh-add ~/.ssh/id_*
 }
 
-sesam() {
-	curl -X POST -u nerd:test1234 http://rpi.embassy.ccchb.de/open
-}
-
 # Sane value for ^L
 bind "^L=clear-screen"
 
@@ -113,3 +109,5 @@ venv() {
 	deactivate && true
 	. .venv/bin/activate
 }
+
+[ -f ~/.mkshrc.local ] && . ~/.mkshrc.local
